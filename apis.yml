@@ -1,0 +1,68 @@
+aid: expensify
+name: Expensify
+description: >-
+  Expensify is an expense management platform that automates receipt scanning,
+  expense reporting, reimbursement, corporate card reconciliation, bill pay,
+  invoicing, and travel booking for individuals, small businesses, and
+  enterprises. The Expensify Integration Server API enables programmatic export
+  of expense data, creation and update of policies and employees, and
+  bidirectional data flow with accounting and HR systems. Authentication uses
+  partnerUserID and partnerUserSecret credentials passed in a
+  requestJobDescription JSON payload on every request.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Expense Management
+  - Expense Reporting
+  - Receipt Scanning
+  - Corporate Cards
+  - Bill Pay
+  - Reimbursement
+  - Accounting Integration
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/expensify/refs/heads/main/apis.yml
+created: '2026-05-11'
+modified: '2026-05-11'
+specificationVersion: '0.19'
+apis:
+  - aid: expensify:integration-server
+    name: Expensify Integration Server API
+    description: >-
+      REST-style API for exporting expense reports, creating and updating
+      policies, managing employees, and integrating Expensify data with
+      accounting and HR systems. Authentication uses partnerUserID and
+      partnerUserSecret credentials passed in a requestJobDescription JSON
+      payload on every POST request.
+    humanURL: https://integrations.expensify.com/Integration-Server/doc/
+    baseURL: https://integrations.expensify.com/Integration-Server/ExpensifyIntegrations
+    tags:
+      - Expense Management
+      - Expense Reporting
+      - Policy Management
+      - Employee Management
+      - Accounting Integration
+    properties:
+      - type: Documentation
+        url: https://integrations.expensify.com/Integration-Server/doc/
+      - type: Getting Started
+        url: https://help.expensify.com/articles/expensify-classic/connections/Expensify-API
+      - type: API Credentials
+        url: https://www.expensify.com/tools/integrations/
+common:
+  - type: Website
+    url: https://www.expensify.com
+  - type: Documentation
+    url: https://integrations.expensify.com/Integration-Server/doc/
+  - type: Help Center
+    url: https://help.expensify.com
+  - type: Sign Up
+    url: https://www.expensify.com/signup
+  - type: Pricing
+    url: https://www.expensify.com/pricing
+  - type: Support
+    url: https://help.expensify.com
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/expensify
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
