@@ -44,7 +44,7 @@ apis:
     properties:
       - type: Documentation
         url: https://integrations.expensify.com/Integration-Server/doc/
-      - type: Getting Started
+      - type: GettingStarted
         url: https://help.expensify.com/articles/expensify-classic/connections/Expensify-API
       - type: API Credentials
         url: https://www.expensify.com/tools/integrations/
@@ -55,7 +55,7 @@ common:
     url: https://integrations.expensify.com/Integration-Server/doc/
   - type: Help Center
     url: https://help.expensify.com
-  - type: Sign Up
+  - type: SignUp
     url: https://www.expensify.com/signup
   - type: Pricing
     url: https://www.expensify.com/pricing
