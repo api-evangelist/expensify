@@ -49,6 +49,8 @@ apis:
       - type: API Credentials
         url: https://www.expensify.com/tools/integrations/
 common:
+  - type: GitHubOrganization
+    url: https://github.com/Expensify
   - type: Website
     url: https://www.expensify.com
   - type: Documentation
