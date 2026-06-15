@@ -1,0 +1,292 @@
+{
+  "item": [
+    {
+      "id": "3afbb4f1-5e12-48d6-830d-12ed14ffe511",
+      "name": "Integrations",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f347bdd1-d3c3-4cd3-b773-ebaedf4e5fa6",
+          "name": "Submit an integration job",
+          "request": {
+            "name": "Submit an integration job",
+            "description": {
+              "content": "All Expensify Integration Server operations are dispatched through this single endpoint. The job type is selected by the type field on requestJobDescription.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ExpensifyIntegrations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "<string>",
+                  "description": "(Required) JSON string describing the job"
+                },
+                {
+                  "disabled": false,
+                  "key": "credentials",
+                  "value": "{\"partnerUserID\":\"<string>\",\"partnerUserSecret\":\"<string>\"}",
+                  "description": "(Required) JSON string describing the job"
+                },
+                {
+                  "disabled": false,
+                  "key": "onReceive",
+                  "value": "{\"immediateResponse\":[\"<string>\",\"<string>\"]}",
+                  "description": "(Required) JSON string describing the job"
+                },
+                {
+                  "disabled": false,
+                  "key": "inputSettings",
+                  "value": "{\"type\":\"<string>\",\"filters\":{\"startDate\":\"<date>\",\"endDate\":\"<date>\",\"approvedAfter\":\"<date>\",\"markedAsExported\":\"<string>\"},\"reportState\":\"<string>\",\"limit\":\"<integer>\"}",
+                  "description": "(Required) JSON string describing the job"
+                },
+                {
+                  "disabled": false,
+                  "key": "outputSettings",
+                  "value": "{\"fileExtension\":\"<string>\",\"fileBasename\":\"<string>\"}",
+                  "description": "(Required) JSON string describing the job"
+                },
+                {
+                  "disabled": false,
+                  "key": "template",
+                  "value": "<string>",
+                  "description": "ExpensiCode template (for type=file)"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "ee5e448f-39f6-4aae-9db1-26e6c6ceaeb1",
+              "name": "Job response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ExpensifyIntegrations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) JSON string describing the job",
+                        "type": "text/plain"
+                      },
+                      "key": "type",
+                      "value": "file"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) JSON string describing the job",
+                        "type": "text/plain"
+                      },
+                      "key": "credentials",
+                      "value": "{\"partnerUserID\":\"string\",\"partnerUserSecret\":\"string\"}"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) JSON string describing the job",
+                        "type": "text/plain"
+                      },
+                      "key": "onReceive",
+                      "value": "{\"immediateResponse\":[\"returnRandomFileName\",\"returnRandomFileName\"]}"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) JSON string describing the job",
+                        "type": "text/plain"
+                      },
+                      "key": "inputSettings",
+                      "value": "{\"type\":\"combinedReportData\",\"filters\":{\"startDate\":\"2011-12-11\",\"endDate\":\"2009-11-30\",\"approvedAfter\":\"1956-01-29\",\"markedAsExported\":\"string\"},\"reportState\":\"string\",\"limit\":2221}"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) JSON string describing the job",
+                        "type": "text/plain"
+                      },
+                      "key": "outputSettings",
+                      "value": "{\"fileExtension\":\"csv\",\"fileBasename\":\"string\"}"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "ExpensiCode template (for type=file)",
+                        "type": "text/plain"
+                      },
+                      "key": "template",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"responseCode\": 9329,\n  \"responseMessage\": \"string\",\n  \"fileName\": \"string\",\n  \"reportID\": \"string\",\n  \"policyID\": \"string\",\n  \"policyInfoList\": [\n    {\n      \"key_0\": 1126.5188675243498,\n      \"key_1\": true,\n      \"key_2\": true\n    },\n    {\n      \"key_0\": 5627\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "631c3286-27cf-4bee-a676-377613172bef",
+              "name": "Rate limit exceeded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ExpensifyIntegrations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) JSON string describing the job",
+                        "type": "text/plain"
+                      },
+                      "key": "type",
+                      "value": "file"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) JSON string describing the job",
+                        "type": "text/plain"
+                      },
+                      "key": "credentials",
+                      "value": "{\"partnerUserID\":\"string\",\"partnerUserSecret\":\"string\"}"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) JSON string describing the job",
+                        "type": "text/plain"
+                      },
+                      "key": "onReceive",
+                      "value": "{\"immediateResponse\":[\"returnRandomFileName\",\"returnRandomFileName\"]}"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) JSON string describing the job",
+                        "type": "text/plain"
+                      },
+                      "key": "inputSettings",
+                      "value": "{\"type\":\"combinedReportData\",\"filters\":{\"startDate\":\"2011-12-11\",\"endDate\":\"2009-11-30\",\"approvedAfter\":\"1956-01-29\",\"markedAsExported\":\"string\"},\"reportState\":\"string\",\"limit\":2221}"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) JSON string describing the job",
+                        "type": "text/plain"
+                      },
+                      "key": "outputSettings",
+                      "value": "{\"fileExtension\":\"csv\",\"fileBasename\":\"string\"}"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "ExpensiCode template (for type=file)",
+                        "type": "text/plain"
+                      },
+                      "key": "template",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://integrations.expensify.com/Integration-Server",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "eef4f88a-e578-49f2-9f38-bec06856002f",
+    "name": "Expensify Integration Server API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Best-effort OpenAPI for the Expensify Integration Server, documented at https://integrations.expensify.com/Integration-Server/doc/. The API exposes a single POST endpoint that takes a requestJobDescription JSON payload selecting a job type (file, reconciliation, download, create, get, update). Credentials (partnerUserID + partnerUserSecret) are passed in every payload. Rate limits: 5 requests / 10s and 20 requests / 60s.\n\nContact Support:\n Name: API Evangelist\n Email: kin@apievangelist.com",
+      "type": "text/plain"
+    }
+  }
+}
