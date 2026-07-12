@@ -49,6 +49,8 @@ apis:
       - type: API Credentials
         url: https://www.expensify.com/tools/integrations/
 common:
+  - type: DomainSecurity
+    url: security/expensify-domain-security.yml
   - type: GitHubOrganization
     url: https://github.com/Expensify
   - type: Website
@@ -65,6 +67,8 @@ common:
     url: https://help.expensify.com
   - type: LinkedIn
     url: https://www.linkedin.com/company/expensify
+  - url: https://use.expensify.com/blog?format=rss
+    type: Blog
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
