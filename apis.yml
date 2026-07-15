@@ -49,6 +49,8 @@ apis:
       - type: API Credentials
         url: https://www.expensify.com/tools/integrations/
 common:
+  - type: AgenticAccess
+    url: agentic-access/expensify-agentic-access.yml
   - type: DomainSecurity
     url: security/expensify-domain-security.yml
   - type: GitHubOrganization
