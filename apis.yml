@@ -10,7 +10,18 @@ description: >-
   partnerUserID and partnerUserSecret credentials passed in a
   requestJobDescription JSON payload on every request.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/expensify.png
 tags:
   - Expense Management
   - Expense Reporting
@@ -25,29 +36,37 @@ created: '2026-05-11'
 modified: '2026-05-11'
 specificationVersion: '0.19'
 apis:
-  - aid: expensify:integration-server
-    name: Expensify Integration Server API
-    description: >-
-      REST-style API for exporting expense reports, creating and updating
-      policies, managing employees, and integrating Expensify data with
-      accounting and HR systems. Authentication uses partnerUserID and
-      partnerUserSecret credentials passed in a requestJobDescription JSON
-      payload on every POST request.
-    humanURL: https://integrations.expensify.com/Integration-Server/doc/
-    baseURL: https://integrations.expensify.com/Integration-Server/ExpensifyIntegrations
-    tags:
-      - Expense Management
-      - Expense Reporting
-      - Policy Management
-      - Employee Management
-      - Accounting Integration
-    properties:
-      - type: Documentation
-        url: https://integrations.expensify.com/Integration-Server/doc/
-      - type: GettingStarted
-        url: https://help.expensify.com/articles/expensify-classic/connections/Expensify-API
-      - type: API Credentials
-        url: https://www.expensify.com/tools/integrations/
+- aid: expensify:integration-server
+  name: Expensify Integration Server API
+  description: >-
+    REST-style API for exporting expense reports, creating and updating policies, managing employees,
+    and integrating Expensify data with accounting and HR systems. Authentication uses partnerUserID and
+    partnerUserSecret credentials passed in a requestJobDescription JSON payload on every POST request.
+  humanURL: https://integrations.expensify.com/Integration-Server/doc/
+  baseURL: https://integrations.expensify.com/Integration-Server/ExpensifyIntegrations
+  tags:
+  - Expense Management
+  - Expense Reporting
+  - Policy Management
+  - Employee Management
+  - Accounting Integration
+  properties:
+  - type: Documentation
+    url: https://integrations.expensify.com/Integration-Server/doc/
+  - type: GettingStarted
+    url: https://help.expensify.com/articles/expensify-classic/connections/Expensify-API
+  - type: API Credentials
+    url: https://www.expensify.com/tools/integrations/
+- aid: expensify:expensify-integrations-api
+  name: Expensify Integrations API
+  description: The Integrations API from Expensify — 1 operation(s) for integrations.
+  humanURL: https://integrations.expensify.com/Integration-Server/doc/
+  baseURL: https://integrations.expensify.com/Integration-Server/ExpensifyIntegrations
+  tags:
+  - Integrations
+  properties:
+  - type: OpenAPI
+    url: openapi/expensify-integrations-api-openapi.yml
 common:
   - type: AgenticAccess
     url: agentic-access/expensify-agentic-access.yml
