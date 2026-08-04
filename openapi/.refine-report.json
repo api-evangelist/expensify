@@ -1,0 +1,14 @@
+{
+  "provider": "expensify",
+  "sources": [
+    "expensify-integrations-api-openapi.yml"
+  ],
+  "outputs": [
+    "expensify-integrations-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
