@@ -1,0 +1,42 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Expensify Integration Server Integrations API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Integrations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Submit an integration job",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://integrations.expensify.com/Integration-Server/ExpensifyIntegrations",
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "requestJobDescription",
+                  "value": ""
+                },
+                {
+                  "name": "template",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "All Expensify Integration Server operations are dispatched through this single endpoint. The job type is selected by the type field on requestJobDescription."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
