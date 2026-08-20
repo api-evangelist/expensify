@@ -63,6 +63,8 @@ apis:
   humanURL: https://integrations.expensify.com/Integration-Server/doc/
   baseURL: https://integrations.expensify.com/Integration-Server/ExpensifyIntegrations
   tags:
+  - Integration
+  tags_raw:
   - Integrations
   properties:
   - type: OpenAPI
