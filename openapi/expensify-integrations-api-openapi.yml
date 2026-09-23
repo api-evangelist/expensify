@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Expensify Integration Server Integrations API
   description: 'Best-effort OpenAPI for the Expensify Integration Server, documented at https://integrations.expensify.com/Integration-Server/doc/. The API exposes a single POST endpoint that takes a requestJobDescription JSON payload selecting a job type (file, reconciliation, download, create, get, update). Credentials (partnerUserID + partnerUserSecret) are passed in every payload. Rate limits: 5 requests / 10s and 20 requests / 60s.'
@@ -63,6 +63,72 @@ components:
           type: string
         partnerUserSecret:
           type: string
+    JobResponse:
+      type: object
+      properties:
+        responseCode:
+          type: integer
+          description: HTTP-style status code
+        responseMessage:
+          type: string
+        fileName:
+          type: string
+        reportID:
+          type: string
+        policyID:
+          type: string
+        policyInfoList:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+    OnReceive:
+      type: object
+      properties:
+        immediateResponse:
+          type: array
+          items:
+            type: string
+            enum:
+            - returnRandomFileName
+    CreateJob:
+      type: object
+      required:
+      - type
+      - credentials
+      - inputSettings
+      properties:
+        type:
+          type: string
+          enum:
+          - create
+        credentials:
+          $ref: '#/components/schemas/Credentials'
+        inputSettings:
+          type: object
+          properties:
+            type:
+              type: string
+              enum:
+              - report
+              - expenses
+              - policy
+              - expenseRules
+            policyID:
+              type: string
+            report:
+              type: object
+              additionalProperties: true
+            employeeEmail:
+              type: string
+            expenses:
+              type: array
+              items:
+                type: object
+                additionalProperties: true
+            policy:
+              type: object
+              additionalProperties: true
     UpdateJob:
       type: object
       required:
@@ -114,34 +180,26 @@ components:
                 type: string
             reportState:
               type: string
-    OnReceive:
+    DownloadJob:
       type: object
+      required:
+      - type
+      - credentials
+      - fileName
+      - fileSystem
       properties:
-        immediateResponse:
-          type: array
-          items:
-            type: string
-            enum:
-            - returnRandomFileName
-    JobResponse:
-      type: object
-      properties:
-        responseCode:
-          type: integer
-          description: HTTP-style status code
-        responseMessage:
+        type:
           type: string
+          enum:
+          - download
+        credentials:
+          $ref: '#/components/schemas/Credentials'
         fileName:
           type: string
-        reportID:
+        fileSystem:
           type: string
-        policyID:
-          type: string
-        policyInfoList:
-          type: array
-          items:
-            type: object
-            additionalProperties: true
+          enum:
+          - integrationServer
     FileJob:
       type: object
       required:
@@ -230,44 +288,6 @@ components:
               type: boolean
             userEmail:
               type: string
-    CreateJob:
-      type: object
-      required:
-      - type
-      - credentials
-      - inputSettings
-      properties:
-        type:
-          type: string
-          enum:
-          - create
-        credentials:
-          $ref: '#/components/schemas/Credentials'
-        inputSettings:
-          type: object
-          properties:
-            type:
-              type: string
-              enum:
-              - report
-              - expenses
-              - policy
-              - expenseRules
-            policyID:
-              type: string
-            report:
-              type: object
-              additionalProperties: true
-            employeeEmail:
-              type: string
-            expenses:
-              type: array
-              items:
-                type: object
-                additionalProperties: true
-            policy:
-              type: object
-              additionalProperties: true
     ReconciliationJob:
       type: object
       required:
@@ -298,23 +318,3 @@ components:
               type: string
             domain:
               type: string
-    DownloadJob:
-      type: object
-      required:
-      - type
-      - credentials
-      - fileName
-      - fileSystem
-      properties:
-        type:
-          type: string
-          enum:
-          - download
-        credentials:
-          $ref: '#/components/schemas/Credentials'
-        fileName:
-          type: string
-        fileSystem:
-          type: string
-          enum:
-          - integrationServer
