@@ -53,35 +53,6 @@ paths:
           description: Rate limit exceeded
 components:
   schemas:
-    Credentials:
-      type: object
-      required:
-      - partnerUserID
-      - partnerUserSecret
-      properties:
-        partnerUserID:
-          type: string
-        partnerUserSecret:
-          type: string
-    JobResponse:
-      type: object
-      properties:
-        responseCode:
-          type: integer
-          description: HTTP-style status code
-        responseMessage:
-          type: string
-        fileName:
-          type: string
-        reportID:
-          type: string
-        policyID:
-          type: string
-        policyInfoList:
-          type: array
-          items:
-            type: object
-            additionalProperties: true
     OnReceive:
       type: object
       properties:
@@ -91,6 +62,26 @@ components:
             type: string
             enum:
             - returnRandomFileName
+    DownloadJob:
+      type: object
+      required:
+      - type
+      - credentials
+      - fileName
+      - fileSystem
+      properties:
+        type:
+          type: string
+          enum:
+          - download
+        credentials:
+          $ref: '#/components/schemas/Credentials'
+        fileName:
+          type: string
+        fileSystem:
+          type: string
+          enum:
+          - integrationServer
     CreateJob:
       type: object
       required:
@@ -129,6 +120,36 @@ components:
             policy:
               type: object
               additionalProperties: true
+    ReconciliationJob:
+      type: object
+      required:
+      - type
+      - credentials
+      - inputSettings
+      properties:
+        type:
+          type: string
+          enum:
+          - reconciliation
+        credentials:
+          $ref: '#/components/schemas/Credentials'
+        inputSettings:
+          type: object
+          properties:
+            type:
+              type: string
+              enum:
+              - reconciliation
+            startDate:
+              type: string
+              format: date
+            endDate:
+              type: string
+              format: date
+            cardID:
+              type: string
+            domain:
+              type: string
     UpdateJob:
       type: object
       required:
@@ -180,26 +201,69 @@ components:
                 type: string
             reportState:
               type: string
-    DownloadJob:
+    Credentials:
+      type: object
+      required:
+      - partnerUserID
+      - partnerUserSecret
+      properties:
+        partnerUserID:
+          type: string
+        partnerUserSecret:
+          type: string
+    GetJob:
       type: object
       required:
       - type
       - credentials
-      - fileName
-      - fileSystem
+      - inputSettings
       properties:
         type:
           type: string
           enum:
-          - download
+          - get
         credentials:
           $ref: '#/components/schemas/Credentials'
+        inputSettings:
+          type: object
+          properties:
+            type:
+              type: string
+              enum:
+              - policy
+              - policyList
+              - domainCardList
+            policyIDList:
+              type: array
+              items:
+                type: string
+            fields:
+              type: array
+              items:
+                type: string
+            adminOnly:
+              type: boolean
+            userEmail:
+              type: string
+    JobResponse:
+      type: object
+      properties:
+        responseCode:
+          type: integer
+          description: HTTP-style status code
+        responseMessage:
+          type: string
         fileName:
           type: string
-        fileSystem:
+        reportID:
           type: string
-          enum:
-          - integrationServer
+        policyID:
+          type: string
+        policyInfoList:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
     FileJob:
       type: object
       required:
@@ -253,68 +317,4 @@ components:
               - json
               - xml
             fileBasename:
-              type: string
-    GetJob:
-      type: object
-      required:
-      - type
-      - credentials
-      - inputSettings
-      properties:
-        type:
-          type: string
-          enum:
-          - get
-        credentials:
-          $ref: '#/components/schemas/Credentials'
-        inputSettings:
-          type: object
-          properties:
-            type:
-              type: string
-              enum:
-              - policy
-              - policyList
-              - domainCardList
-            policyIDList:
-              type: array
-              items:
-                type: string
-            fields:
-              type: array
-              items:
-                type: string
-            adminOnly:
-              type: boolean
-            userEmail:
-              type: string
-    ReconciliationJob:
-      type: object
-      required:
-      - type
-      - credentials
-      - inputSettings
-      properties:
-        type:
-          type: string
-          enum:
-          - reconciliation
-        credentials:
-          $ref: '#/components/schemas/Credentials'
-        inputSettings:
-          type: object
-          properties:
-            type:
-              type: string
-              enum:
-              - reconciliation
-            startDate:
-              type: string
-              format: date
-            endDate:
-              type: string
-              format: date
-            cardID:
-              type: string
-            domain:
               type: string
