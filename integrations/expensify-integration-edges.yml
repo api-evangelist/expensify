@@ -1,0 +1,72 @@
+generated: '2026-10-14'
+method: searched
+checked:
+- freshbooks/integrations/freshbooks-integration-edges.yml
+- okta/integrations/okta-integration-edges.yml
+- xero/integrations/xero-integration-edges.yml
+source:
+- freshbooks/integrations/freshbooks-integration-edges.yml
+- okta/integrations/okta-integration-edges.yml
+- xero/integrations/xero-integration-edges.yml
+edges:
+- partner_name: FreshBooks (own)
+  partner: freshbooks
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://appstore.freshbooks.com/apps/expensify
+  mirror_of: freshbooks/integrations/freshbooks-integration-edges.yml
+  apps:
+  - Expensify
+  listing_count: 1
+  detected: '2026-10-14'
+  detected_by: mirror-platform-listings.py
+  category: Manage Finances
+- partner_name: Okta (own)
+  partner: okta
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://www.okta.com/integrations/expensifysaml/
+  mirror_of: okta/integrations/okta-integration-edges.yml
+  apps:
+  - Expensify
+  listing_count: 1
+  detected: '2026-10-14'
+  detected_by: mirror-platform-listings.py
+  category: Single Sign-On
+  badges:
+  - OKTA_VERIFIED
+  features:
+  - CREATE
+  - DEACTIVATE
+  - IDENTITY_SECURITY_POSTURE_MANAGEMENT
+  - SAML
+  - SECURE_IDENTITY_INTEGRATIONS_FUNDAMENTAL
+  - SWA
+  - UPDATE
+- partner_name: Xero (own)
+  partner: xero
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://apps.xero.com/us/app/expensify
+  mirror_of: xero/integrations/xero-integration-edges.yml
+  apps:
+  - Expensify
+  listing_count: 1
+  detected: '2026-10-14'
+  detected_by: mirror-platform-listings.py
+  category: Bills and expenses
