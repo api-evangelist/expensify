@@ -53,127 +53,6 @@ paths:
           description: Rate limit exceeded
 components:
   schemas:
-    CreateJob:
-      type: object
-      required:
-      - type
-      - credentials
-      - inputSettings
-      properties:
-        type:
-          type: string
-          enum:
-          - create
-        credentials:
-          $ref: '#/components/schemas/Credentials'
-        inputSettings:
-          type: object
-          properties:
-            type:
-              type: string
-              enum:
-              - report
-              - expenses
-              - policy
-              - expenseRules
-            policyID:
-              type: string
-            report:
-              type: object
-              additionalProperties: true
-            employeeEmail:
-              type: string
-            expenses:
-              type: array
-              items:
-                type: object
-                additionalProperties: true
-            policy:
-              type: object
-              additionalProperties: true
-    OnReceive:
-      type: object
-      properties:
-        immediateResponse:
-          type: array
-          items:
-            type: string
-            enum:
-            - returnRandomFileName
-    ReconciliationJob:
-      type: object
-      required:
-      - type
-      - credentials
-      - inputSettings
-      properties:
-        type:
-          type: string
-          enum:
-          - reconciliation
-        credentials:
-          $ref: '#/components/schemas/Credentials'
-        inputSettings:
-          type: object
-          properties:
-            type:
-              type: string
-              enum:
-              - reconciliation
-            startDate:
-              type: string
-              format: date
-            endDate:
-              type: string
-              format: date
-            cardID:
-              type: string
-            domain:
-              type: string
-    Credentials:
-      type: object
-      required:
-      - partnerUserID
-      - partnerUserSecret
-      properties:
-        partnerUserID:
-          type: string
-        partnerUserSecret:
-          type: string
-    GetJob:
-      type: object
-      required:
-      - type
-      - credentials
-      - inputSettings
-      properties:
-        type:
-          type: string
-          enum:
-          - get
-        credentials:
-          $ref: '#/components/schemas/Credentials'
-        inputSettings:
-          type: object
-          properties:
-            type:
-              type: string
-              enum:
-              - policy
-              - policyList
-              - domainCardList
-            policyIDList:
-              type: array
-              items:
-                type: string
-            fields:
-              type: array
-              items:
-                type: string
-            adminOnly:
-              type: boolean
-            userEmail:
-              type: string
     JobResponse:
       type: object
       properties:
@@ -244,6 +123,83 @@ components:
                 type: string
             reportState:
               type: string
+    OnReceive:
+      type: object
+      properties:
+        immediateResponse:
+          type: array
+          items:
+            type: string
+            enum:
+            - returnRandomFileName
+    ReconciliationJob:
+      type: object
+      required:
+      - type
+      - credentials
+      - inputSettings
+      properties:
+        type:
+          type: string
+          enum:
+          - reconciliation
+        credentials:
+          $ref: '#/components/schemas/Credentials'
+        inputSettings:
+          type: object
+          properties:
+            type:
+              type: string
+              enum:
+              - reconciliation
+            startDate:
+              type: string
+              format: date
+            endDate:
+              type: string
+              format: date
+            cardID:
+              type: string
+            domain:
+              type: string
+    CreateJob:
+      type: object
+      required:
+      - type
+      - credentials
+      - inputSettings
+      properties:
+        type:
+          type: string
+          enum:
+          - create
+        credentials:
+          $ref: '#/components/schemas/Credentials'
+        inputSettings:
+          type: object
+          properties:
+            type:
+              type: string
+              enum:
+              - report
+              - expenses
+              - policy
+              - expenseRules
+            policyID:
+              type: string
+            report:
+              type: object
+              additionalProperties: true
+            employeeEmail:
+              type: string
+            expenses:
+              type: array
+              items:
+                type: object
+                additionalProperties: true
+            policy:
+              type: object
+              additionalProperties: true
     DownloadJob:
       type: object
       required:
@@ -264,6 +220,40 @@ components:
           type: string
           enum:
           - integrationServer
+    GetJob:
+      type: object
+      required:
+      - type
+      - credentials
+      - inputSettings
+      properties:
+        type:
+          type: string
+          enum:
+          - get
+        credentials:
+          $ref: '#/components/schemas/Credentials'
+        inputSettings:
+          type: object
+          properties:
+            type:
+              type: string
+              enum:
+              - policy
+              - policyList
+              - domainCardList
+            policyIDList:
+              type: array
+              items:
+                type: string
+            fields:
+              type: array
+              items:
+                type: string
+            adminOnly:
+              type: boolean
+            userEmail:
+              type: string
     FileJob:
       type: object
       required:
@@ -318,3 +308,13 @@ components:
               - xml
             fileBasename:
               type: string
+    Credentials:
+      type: object
+      required:
+      - partnerUserID
+      - partnerUserSecret
+      properties:
+        partnerUserID:
+          type: string
+        partnerUserSecret:
+          type: string
