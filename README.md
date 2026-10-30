@@ -1,4 +1,4 @@
-# Expensify (expensify)
+# Expensify
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,64 +66,100 @@
 
 Expensify is an expense management platform that automates receipt scanning, expense reporting, reimbursement, corporate card reconciliation, bill pay, invoicing, and travel booking for individuals, small businesses, and enterprises. The Expensify Integration Server API enables programmatic export of expense data, creation and update of policies and employees, and bidirectional data flow with accounting and HR systems. Authentication uses partnerUserID and partnerUserSecret credentials passed in a requestJobDescription JSON payload on every request.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/expensify/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/expensify/refs/heads/main/apis.yml)
+**Areas:** Expense Management · Expense Reporting · Receipt Scanning · Corporate Cards · Bill Pay · Reimbursement · Accounting Integration · Accounting
 
-## Scope
+## Expensify on APIs.io
 
-- **Type:** Index
+Everything profiled for Expensify is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/expensify/](https://apis.io/providers/expensify/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (2)
 
-- Expense Management
-- Expense Reporting
-- Receipt Scanning
-- Corporate Cards
-- Bill Pay
-- Reimbursement
-- Accounting Integration
+- [Expensify Integration Server API](https://apis.io/apis/expensify/integration-server/) — REST-style API for exporting expense reports, creating and updating policies, managing employees, and integrating Expensify data with accounting and HR…
+- [Expensify Integrations API](https://apis.io/apis/expensify/expensify-integrations-api/) — The Integrations API from Expensify — 1 operation(s) for integrations.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-05-11
-- **Modified:** 2026-05-11
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Expensify Integration Server API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-REST-style API for exporting expense reports, creating and updating policies, managing employees, and integrating Expensify data with accounting and HR systems. Authentication uses partnerUserID and partnerUserSecret credentials passed in a requestJobDescription JSON payload on every POST request.
+- [Expensify Agentic Access](https://apis.io/agentic-access/expensify/expensify-agentic-access/)
 
-- **Human URL:** [https://integrations.expensify.com/Integration-Server/doc/](https://integrations.expensify.com/Integration-Server/doc/)
-- **Base URL:** `https://integrations.expensify.com/Integration-Server/ExpensifyIntegrations`
+#### Collections (2)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- Expense Management
-- Expense Reporting
-- Policy Management
-- Employee Management
-- Accounting Integration
+- [Expensify Integration Server API](https://apis.io/collections/expensify/open-expensify/)
+- [Expensify Integration Server Integrations API](https://apis.io/collections/expensify/open-expensify-integrations-api/)
 
-#### Properties
+#### Security (1)
 
-- [Documentation](https://integrations.expensify.com/Integration-Server/doc/)
-- [Getting Started](https://help.expensify.com/articles/expensify-classic/connections/Expensify-API)
-- [A P I  Credentials](https://www.expensify.com/tools/integrations/)
-- [Postman Collection](collections/expensify.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/expensify.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Authentication, trust centre, and vulnerability disclosure.
 
-## Common Properties
+- [Expensify Domain Security](https://apis.io/security/expensify/expensify-domain-security/)
 
-- [GitHub Organization](https://github.com/Expensify)
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://www.expensify.com)
 - [Documentation](https://integrations.expensify.com/Integration-Server/doc/)
-- [Help  Center](https://help.expensify.com)
-- [Sign Up](https://www.expensify.com/signup)
 - [Pricing](https://www.expensify.com/pricing)
 - [Support](https://help.expensify.com)
-- [LinkedIn](https://www.linkedin.com/company/expensify)
+- [Blog](https://use.expensify.com/blog?format=rss)
+- [GitHub](https://github.com/Expensify)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 24.9** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 49.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 19.0 |
+| Access clarity | 23.7 |
+
+**Agent readiness 14.7** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 5.4** — Payments
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/expensify/](https://apis.io/providers/expensify/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Expensify: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/expensify/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
